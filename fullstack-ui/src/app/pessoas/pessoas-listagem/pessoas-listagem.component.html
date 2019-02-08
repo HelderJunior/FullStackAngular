@@ -1,0 +1,57 @@
+<div class="container">  
+  <div class="ui-g">
+
+      <div class="ui-g-12">
+          <h1>Listagem de pessoas</h1>
+        </div>
+
+    <div class="ui-g-12">
+      <p-table [value]="pessoas" [responsive]="true"
+        [paginator]="false" >
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Nome</th>
+            <th>Endereço</th>
+            <th>Complemetos</th>
+            <th>Bairro</th>
+            <th>Número</th>
+            <th class="col-acoes-header"></th>
+          </tr>
+        </ng-template>
+
+        <ng-template pTemplate="body" let-pessoa>
+          <tr>
+            <td>{{ pessoa.nome }}</td>
+            <td>{{ pessoa.logradouro }}</td>
+            <td>{{ pessoa.complemento }}</td>
+            <td>{{ pessoa.bairro }}</td>
+            <td>{{ pessoa.numero }}</td>
+           
+            <td class="col-acoes">
+              <a pButton icon="fa fa-pencil"
+                pTooltip="Editar" tooltipPosition="top"
+                [routerLink]="['/pessoas', pessoa.codigo]"></a>
+
+              <button pButton icon="fa fa-trash"
+                pTooltip="Excluir" tooltipPosition="top"
+                (click)="confirmarExclusao(pessoa)"></button>
+            </td>
+          </tr>
+        </ng-template>
+
+        <ng-template pTemplate="emptymessage">
+          <tr>
+            <td colspan="5">
+              Nenhuma pessoa encontrada
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+
+    <div class="ui-g-12">
+      <a pButton label="Nova Pessoa" routerLink="/pessoas/nova"></a>
+    </div>
+  </div>
+
+</div>

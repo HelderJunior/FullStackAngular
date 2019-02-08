@@ -1,0 +1,73 @@
+<div class="container">
+  <form #f="ngForm" autocomplete="off" (ngSubmit)="salvar(f)">
+
+    <div class="ui-g">
+      <div class="ui-g-12">
+        <h1>Nova Pessoa</h1>
+      </div>
+
+      <div class="ui-g-12 ui-fluid">
+        <label>Nome</label>
+        <input pInputText type="text" name="nome"
+          [(ngModel)]="pessoa.nome"
+          #nome="ngModel" required minlength="5">
+
+        <app-message [control]="nome" error="required"
+          text="Informe o nome">
+        </app-message>
+      </div>
+
+      <div class="ui-g-12 ui-md-9 ui-fluid">
+        <label>Endereço</label>
+        <input pInputText type="text" name="logradouro"
+          [(ngModel)]="pessoa.logradouro"
+          #logradouro="ngModel" required>
+
+        <app-message [control]="logradouro" error="required"
+          text="Informe o logradouro"></app-message>
+      </div>
+
+      <div class="ui-g-12 ui-md-3 ui-fluid">
+        <label>Número</label>
+        <input pInputText type="text" name="numero"
+          [(ngModel)]="pessoa.numero"
+          #numero="ngModel" required>
+
+        <app-message [control]="numero" error="required"
+          text="Informe o número"></app-message>
+      </div>
+
+      <div class="ui-g-12 ui-md-4 ui-fluid">
+        <label>Complemento</label>
+        <input pInputText type="text" name="complemento"
+        [(ngModel)]="pessoa.complemento">
+      </div>
+
+      <div class="ui-g-12 ui-md-4 ui-fluid">
+        <label>Bairro</label>
+        <input pInputText type="text" name="bairro"
+          [(ngModel)]="pessoa.bairro"
+          #bairro="ngModel" required>
+
+        <app-message [control]="bairro" error="required"
+          text="Informe o bairro"></app-message>
+      </div>
+
+      <div class="ui-g-12 ui-md-4 ui-fluid">
+        <label>CEP</label>
+        <p-inputMask name="cep" mask="99.999-999"
+          [(ngModel)]="pessoa.cep"
+          #cep="ngModel" required></p-inputMask>
+
+        <app-message [control]="cep" error="required"
+          text="Informe o CEP"></app-message>
+      </div>  
+
+      <div class="ui-g-12">
+        <button pButton type="submit" label="Salvar" [disabled]="f.invalid"></button>
+        <a routerLink="/pessoas">Voltar para a listagem</a>
+      </div>
+    </div>
+
+  </form>
+</div>
