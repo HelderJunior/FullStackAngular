@@ -2,6 +2,7 @@ import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { CurrencyMaskModule } from 'ng2-currency-mask';
 import { InputMaskModule } from 'primeng/inputmask';
 import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
@@ -31,7 +32,9 @@ import { PessoasRoutingModule } from './pessoas-routing.module';
     DropdownModule,
 
     SharedModule,
-    PessoasRoutingModule
+    PessoasRoutingModule,
+    CurrencyMaskModule
+
   ],
   declarations: [
     PessoaCadastroComponent,

@@ -7,65 +7,63 @@
       </div>
 
       <div class="ui-g-12 ui-fluid">
-        <label>Nome</label>
+        <label>Pessoa</label>
         <input pInputText type="text" name="nome"
           [(ngModel)]="pessoa.nome"
           #nome="ngModel" required minlength="5">
 
         <app-message [control]="nome" error="required"
-          text="Informe o nome">
+          text="Informe o pessoa">
         </app-message>
       </div>
 
-      <div class="ui-g-12 ui-md-9 ui-fluid">
-        <label>Endereço</label>
-        <input pInputText type="text" name="logradouro"
-          [(ngModel)]="pessoa.logradouro"
-          #logradouro="ngModel" required>
-
-        <app-message [control]="logradouro" error="required"
-          text="Informe o logradouro"></app-message>
-      </div>
-
-      <div class="ui-g-12 ui-md-3 ui-fluid">
-        <label>Número</label>
-        <input pInputText type="text" name="numero"
-          [(ngModel)]="pessoa.numero"
-          #numero="ngModel" required>
-
-        <app-message [control]="numero" error="required"
-          text="Informe o número"></app-message>
+      <div class="ui-g-12 ui-fluid">
+        <label>Instituição Bancária</label>
+        <input pInputText type="text" name="instituicao"
+        [(ngModel)]="pessoa.instituicao">
       </div>
 
       <div class="ui-g-12 ui-md-4 ui-fluid">
-        <label>Complemento</label>
-        <input pInputText type="text" name="complemento"
-        [(ngModel)]="pessoa.complemento">
+        <label>Conta</label>
+        <p-inputMask name="conta" mask="9999-9"
+          [(ngModel)]="pessoa.conta"
+          #conta="ngModel" required></p-inputMask>        
+
+        <app-message [control]="conta" error="required"
+          text="Informe a conta"></app-message>
       </div>
 
       <div class="ui-g-12 ui-md-4 ui-fluid">
-        <label>Bairro</label>
-        <input pInputText type="text" name="bairro"
-          [(ngModel)]="pessoa.bairro"
-          #bairro="ngModel" required>
+        <label>Saldo</label>     
+        
+        <input pInputText type="text" placeholder="0,00" name="saldo" currencyMask
+          [options]="{ prefix: '', thousands: '.', decimal: ',', allowNegative: false }"
+         [(ngModel)]="pessoa.saldo"
+        #saldo="ngModel" required>
 
-        <app-message [control]="bairro" error="required"
-          text="Informe o bairro"></app-message>
-      </div>
+        <app-message [control]="saldo" error="required"
+          text="Informe o saldo"></app-message>
+      </div>      
 
       <div class="ui-g-12 ui-md-4 ui-fluid">
-        <label>CEP</label>
-        <p-inputMask name="cep" mask="99.999-999"
-          [(ngModel)]="pessoa.cep"
-          #cep="ngModel" required></p-inputMask>
+        <label>Correntista</label>
+        <input pInputText type="text" name="correntista"
+          [(ngModel)]="pessoa.correntista"
+          #correntista="ngModel" required>
 
-        <app-message [control]="cep" error="required"
-          text="Informe o CEP"></app-message>
+        <app-message [control]="correntista" error="required"
+          text="Informe o correntista"></app-message>
+      </div>
+
+      <div class="ui-g-12">   
+          <button pButton type="submit" label="Salvar" [disabled]="f.invalid"></button>
+          <a routerLink="/pessoas">Voltar para a listagem</a>
       </div>  
 
-      <div class="ui-g-12">
-        <button pButton type="submit" label="Salvar" [disabled]="f.invalid"></button>
-        <a routerLink="/pessoas">Voltar para a listagem</a>
+      <div class="ui-g-12" style="display:none">
+        <input pInputText type="text" name="logradouro"
+          [(ngModel)]="pessoa"
+          #logradouro="ngModel" required>
       </div>
     </div>
 

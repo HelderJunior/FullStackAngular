@@ -17,12 +17,12 @@ public class Pessoa {
 
 	@NotNull
 	private String nome;
-	private String telefone;
-	private String logradouro;
-	private String numero;
-	private String complemento;
-	private String bairro;
-	private String cep;
+	private String agencia;
+	private String conta;
+	private String saldo;
+	private String instituicao;
+	private String correntista;
+	
 
 	public Long getCodigo() {
 		return codigo;
@@ -40,52 +40,44 @@ public class Pessoa {
 		this.nome = nome;
 	}
 
-	public String getTelefone() {
-		return telefone;
+	public String getAgencia() {
+		return agencia;
 	}
 
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
+	public void setAgencia(String agencia) {
+		this.agencia = agencia;
 	}
 
-	public String getLogradouro() {
-		return logradouro;
+	public String getConta() {
+		return conta;
 	}
 
-	public void setLogradouro(String logradouro) {
-		this.logradouro = logradouro;
+	public void setConta(String conta) {
+		this.conta = conta;
 	}
 
-	public String getNumero() {
-		return numero;
+	public String getSaldo() {
+		return saldo;
 	}
 
-	public void setNumero(String numero) {
-		this.numero = numero;
+	public void setSaldo(String saldo) {
+		this.saldo = saldo;
 	}
 
-	public String getComplemento() {
-		return complemento;
+	public String getInstituicao() {
+		return instituicao;
 	}
 
-	public void setComplemento(String complemento) {
-		this.complemento = complemento;
+	public void setInstituicao(String instituicao) {
+		this.instituicao = instituicao;
 	}
 
-	public String getBairro() {
-		return bairro;
+	public String getCorrentista() {
+		return correntista;
 	}
 
-	public void setBairro(String bairro) {
-		this.bairro = bairro;
-	}
-
-	public String getCep() {
-		return cep;
-	}
-
-	public void setCep(String cep) {
-		this.cep = cep;
+	public void setCorrentista(String correntista) {
+		this.correntista = correntista;
 	}
 
 	@Override

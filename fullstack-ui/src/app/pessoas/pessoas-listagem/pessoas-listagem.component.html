@@ -11,10 +11,10 @@
         <ng-template pTemplate="header">
           <tr>
             <th>Nome</th>
-            <th>Endereço</th>
-            <th>Complemetos</th>
-            <th>Bairro</th>
-            <th>Número</th>
+            <th>Conta</th>
+            <th>Saldo</th>
+            <th>Instituição Bancária</th>
+            <th>Correntista</th>
             <th class="col-acoes-header"></th>
           </tr>
         </ng-template>
@@ -22,10 +22,10 @@
         <ng-template pTemplate="body" let-pessoa>
           <tr>
             <td>{{ pessoa.nome }}</td>
-            <td>{{ pessoa.logradouro }}</td>
-            <td>{{ pessoa.complemento }}</td>
-            <td>{{ pessoa.bairro }}</td>
-            <td>{{ pessoa.numero }}</td>
+            <td>{{ pessoa.conta }}</td>
+            <td>{{ pessoa.saldo | number:'1.2-2' }}</td>
+            <td>{{ pessoa.instituicao }}</td>
+            <td>{{ pessoa.correntista }}</td>
            
             <td class="col-acoes">
               <a pButton icon="fa fa-pencil"
